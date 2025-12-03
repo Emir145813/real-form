@@ -41,7 +41,7 @@ function SignUp() {
     })
 
   return (
-    <div className='bg-linear-to-r from-violet-300 to-pink-300 h-[100vh] flex justify-center items-center'>
+    <div className='bg-linear-to-r from-violet-300 to-pink-300 h-screen flex justify-center items-center'>
       <div className='bg-white/10 px-10 py-10 rounded-3xl border border-white/70 flex flex-col gap-10'>
         <h1 className='bg-linear-to-r from-violet-500 via-violet-600 to-pink-500 bg-clip-text text-transparent font-semibold text-4xl text-center'>
           Create Account
