@@ -28,8 +28,9 @@ const profileSchema = z.object({
     .string(),
   postalcode : z
     .string(),
-  zipcode : z.coerce
-    .number()
+  // zipcode : z.coerce
+  //   .number().parse(0)
+  zipcode : z.number()
 })
 
 export default profileSchema

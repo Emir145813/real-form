@@ -45,7 +45,7 @@ function page() {
         city : '',
         fulladdress : '',
         postalcode: '',
-        zipcode : 0
+        zipcode : 2
       }
     }
   )
@@ -96,6 +96,8 @@ function page() {
   function onSubmit(values: z.infer<typeof profileSchema>) {
     console.log(values)
   }
+
+  
   return (
     <div className="w-full h-screen flex items-center justify-center" >
       <div className="w-full max-w-md bg-gray-50 p-10 rounded-2xl space-y-5">
@@ -112,7 +114,10 @@ function page() {
                   <FormItem>
                     <FormLabel>Name</FormLabel>
                     <FormControl>
-                      <Input className="bg-white" placeholder="Emir" {...field} />
+                      <Input 
+                        className="bg-white" 
+                        placeholder="Emir" 
+                        {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -197,7 +202,12 @@ function page() {
                     <FormItem>
                       <FormLabel>Phone Number</FormLabel>
                       <FormControl>
-                        <Input className=" bg-white" placeholder="999919444" {...field} />
+                        <Input 
+                        type="number" 
+                        className=" bg-white" 
+                        placeholder="999919444" 
+                        {...field} 
+                        onChange={(value) => field.onChange(value.target.valueAsNumber)}/>
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -211,7 +221,12 @@ function page() {
                   <FormItem>
                     <FormLabel>Personal Id</FormLabel>
                     <FormControl>
-                      <Input className="bg-white" placeholder="1451661662" {...field} />
+                      <Input 
+                        type="number" 
+                        className="bg-white" 
+                        placeholder="1451661662" 
+                        {...field} 
+                        onChange={(value) => field.onChange(value.target.valueAsNumber)}/>
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -276,7 +291,12 @@ function page() {
                               <FormItem>
                                 <FormLabel>Provice</FormLabel>
                                 <FormControl>
-                                  <Input className="bg-white" id="province" type="text" placeholder="Province" {...field}/>
+                                  <Input 
+                                    className="bg-white" 
+                                    id="province" 
+                                    type="text" 
+                                    placeholder="Province" 
+                                    {...field}/>
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -291,7 +311,12 @@ function page() {
                               <FormItem>
                                 <FormLabel>City</FormLabel>
                                 <FormControl>
-                                  <Input className="bg-white" id="city" type="text" placeholder="City" {...field}/>
+                                  <Input 
+                                    className="bg-white" 
+                                    id="city" 
+                                    type="text" 
+                                    placeholder="City" 
+                                    {...field}/>
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -307,7 +332,12 @@ function page() {
                               <FormItem>
                                 <FormLabel>Full Address</FormLabel>
                                 <FormControl>
-                                  <Input className="bg-white" id="fulladdress" type="text" placeholder="Address" {...field}/>
+                                  <Input 
+                                    className="bg-white" 
+                                    id="fulladdress" 
+                                    type="text" 
+                                    placeholder="Address" 
+                                    {...field}/>
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -323,7 +353,13 @@ function page() {
                               <FormItem>
                                 <FormLabel>Postal Code</FormLabel>
                                 <FormControl>
-                                  <Input className="bg-white" id="postalcode" type="text" placeholder="5611687" {...field}/>
+                                  <Input 
+                                    className="bg-white" 
+                                    id="postalcode" 
+                                    type="number" 
+                                    placeholder="5611687" 
+                                    {...field} 
+                                    onChange={(value) => field.onChange(value.target.valueAsNumber)}/>
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -334,11 +370,17 @@ function page() {
                           <FormField
                             control={form.control}
                             name="zipcode"
-                            render={({ field }) => (
+                            render={({ field ,fieldState }) => (
                               <FormItem>
                                 <FormLabel>Zip Code</FormLabel>
                                 <FormControl>
-                                  <Input type="number" className="bg-white" id="zipcode" placeholder="116" {...field}/>
+                                  <Input 
+                                    type="number" 
+                                    id="zipcode" 
+                                    placeholder="116" 
+                                    className="bg-white" 
+                                    {...field} 
+                                    onChange={(value) => field.onChange(value.target.valueAsNumber)} />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
