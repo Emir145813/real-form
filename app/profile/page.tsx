@@ -38,13 +38,13 @@ function page() {
         name : '',
         lastname : '',
         prefix : '',
-        number : '',
-        idcardnumber: '',
+        number : 999194003,
+        idcardnumber: 1111111111,
         birthdate : '',
         province : '',
         city : '',
         fulladdress : '',
-        postalcode: '',
+        postalcode: 565,
         zipcode : 2
       }
     }
@@ -173,6 +173,7 @@ function page() {
                                           setValue(currentValue === value ? "" : currentValue)
                                           setPrefixOpen(false)
                                           field.onChange(currentValue);
+                                          
                                         }}
                                       >
                                         {prefixes.label}

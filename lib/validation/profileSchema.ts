@@ -9,15 +9,11 @@ const profileSchema = z.object({
     .string()
     .min(2),
   number : z
-    .string()
-    .min(1)
-    .max(11),
+    .number(),
   prefix : z
     .string(),
   idcardnumber : z
-    .string()
-    .min(10)
-    .max(10),
+    .number(),
   birthdate : z
     .coerce.date(),
   province : z
@@ -27,10 +23,9 @@ const profileSchema = z.object({
   fulladdress : z
     .string(),
   postalcode : z
-    .string(),
-  // zipcode : z.coerce
-  //   .number().parse(0)
-  zipcode : z.number()
+    .number(),
+  zipcode : z
+    .number()
 })
 
 export default profileSchema
